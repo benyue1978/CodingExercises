@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/trapping-rain-water/
+# https://leetcode.com/problems/trapping-rain-water/
 
 class Solution(object):
     def trap(self, height):
@@ -16,12 +16,12 @@ class Solution(object):
             highest_left[i] = highest
             highest = max(highest, height[i])
 
-        highest = height[len(height)-1]
-        for i in range(len(height)-1,0,-1):
+        highest = height[len(height) - 1]
+        for i in range(len(height) - 1, 0, -1):
             highest_right[i] = highest
             highest = max(highest, height[i])
 
-        for i in range(1, len(height)-1):
+        for i in range(1, len(height) - 1):
             if highest_left[i] > height[i] and highest_right[i] > height[i]:
                 water += min(highest_left[i], highest_right[i]) - height[i]
 
