@@ -23,25 +23,22 @@ public class BowlingGame {
         if (frame.equals("--")) {
             frameScore = 0;
             nextRollDouble = 1;
-            return frameScore;
-        }
-        if (frame.startsWith("-")) {
+        } else if (frame.startsWith("-")) {
             frameScore = Integer.parseInt(frame.substring(1, 2));
             nextRollDouble = 1;
-            return frameScore;
-        }
-        if (frame.endsWith("-")) {
+        } else if (frame.endsWith("-")) {
             frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1));
             nextRollDouble = 1;
-            return frameScore;
-        }
-        if (frame.endsWith("/")) {
+        } else if (frame.endsWith("/")) {
             frameScore = 10 + Integer.parseInt(frame.substring(0, 1)) * (nextRollDouble - 1);
             nextRollDouble = 2;
-            return frameScore;
+        } else if (frame.equals("x")){
+            frameScore = nextRollDouble * 10;
+            nextRollDouble = 2;
+        } else {
+            frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
+            nextRollDouble = 1;
         }
-        frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
-        nextRollDouble = 1;
         return frameScore;
     }
 
