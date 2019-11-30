@@ -82,4 +82,16 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame("x x x 12 1- 1- 1- 1- 1- 1-");
         assertEquals(73, game.getScore());
     }
+
+    @Test
+    public void spareInFrameTenTest() {
+        BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- 1/2");
+        assertEquals(21, game.getScore());
+    }
+
+    @Test
+    public void strikeInFrameTenTest() {
+        BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- x12");
+        assertEquals(22, game.getScore());
+    }
 }
