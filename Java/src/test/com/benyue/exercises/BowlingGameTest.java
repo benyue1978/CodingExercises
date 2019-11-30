@@ -94,4 +94,10 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- x12");
         assertEquals(22, game.getScore());
     }
+
+    @Test
+    public void strikeStrikeInFrameTenTest() {
+        BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- xx2");
+        assertEquals(31, game.getScore());
+    }
 }

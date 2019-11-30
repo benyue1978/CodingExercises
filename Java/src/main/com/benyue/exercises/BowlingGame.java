@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BowlingGame {
+    public static final int SCORE_TEN = 10;
     private int score = 0;
     private int nextRollDouble = 1;
     private int nextNextRollDouble = 1;
@@ -22,27 +23,45 @@ public class BowlingGame {
 
     private int parseFrame(String frame) {
         int frameScore;
+        int firstRoll = stringToScore(frame.substring(0, 1));
+        int secondRoll = 0;
+        int thirdRoll = 0;
         if (frame.length() == 3) {
+            thirdRoll = stringToScore(frame.substring(2, 3));
+        }
+        if (frame.length() >= 2) {
             if (frame.substring(1, 2).equals("/")) {
-                frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + nextNextRollDouble * (10 - Integer.parseInt(frame.substring(0, 1)));
-                frameScore += Integer.parseInt(frame.substring(2, 3));
+                secondRoll = SCORE_TEN - firstRoll;
             } else {
-                frameScore = nextRollDouble * 10 + nextNextRollDouble * Integer.parseInt(frame.substring(1, 2)) + Integer.parseInt(frame.substring(2, 3));
+                secondRoll = stringToScore(frame.substring(1, 2));
             }
-        } else if (frame.endsWith("/")) {
-            frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + nextNextRollDouble * (10 - Integer.parseInt(frame.substring(0, 1)));
-            nextRollDouble = 2;
-            nextNextRollDouble = 1;
-        } else if (frame.equals("x")) {
-            frameScore = nextRollDouble * 10;
+        }
+
+        frameScore = getFrameScore(firstRoll, secondRoll);
+        frameScore += thirdRoll;
+
+        if (frame.equals("x")) {
             nextRollDouble = 1 + nextNextRollDouble;
             nextNextRollDouble = 2;
+        } else if (frame.substring(1, 2).equals("/")) {
+            nextRollDouble = 2;
+            nextNextRollDouble = 1;
         } else {
-            frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + nextNextRollDouble * Integer.parseInt(frame.substring(1, 2));
             nextRollDouble = 1;
             nextNextRollDouble = 1;
         }
         return frameScore;
+    }
+
+    private int getFrameScore(int firstRoll, int secondRoll) {
+        return nextRollDouble * firstRoll + nextNextRollDouble * secondRoll;
+    }
+
+    private int stringToScore(String roll) {
+        if (roll.equals("x")) {
+            return SCORE_TEN;
+        }
+        return Integer.parseInt(roll);
     }
 
     public int getScore() {
