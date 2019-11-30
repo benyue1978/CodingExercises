@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class BowlingGame {
     private int score = 0;
+    private int nextRollDouble = 1;
 
     public BowlingGame(String s) {
         String regex = "(\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+)";
@@ -18,16 +19,30 @@ public class BowlingGame {
     }
 
     private int parseFrame(String frame) {
+        int frameScore;
         if (frame.equals("--")) {
-            return 0;
+            frameScore = 0;
+            nextRollDouble = 1;
+            return frameScore;
         }
         if (frame.startsWith("-")) {
-            return Integer.parseInt(frame.substring(1, 2));
+            frameScore = Integer.parseInt(frame.substring(1, 2));
+            nextRollDouble = 1;
+            return frameScore;
         }
         if (frame.endsWith("-")) {
-            return Integer.parseInt(frame.substring(0, 1));
+            frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1));
+            nextRollDouble = 1;
+            return frameScore;
         }
-        return Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
+        if (frame.endsWith("/")) {
+            frameScore = 10;
+            nextRollDouble = 2;
+            return frameScore;
+        }
+        frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
+        nextRollDouble = 1;
+        return frameScore;
     }
 
     public int getScore() {
