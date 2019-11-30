@@ -18,8 +18,14 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void NumberWithMissTest() {
+    public void NumberWithTrailingMissTest() {
         BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- 1-");
         assertEquals(10, game.getScore());
+    }
+
+    @Test
+    public void NumberWithLeadingMissTest() {
+        BowlingGame game = new BowlingGame("-2 1- 1- 1- 1- 1- 1- 1- 1- 1-");
+        assertEquals(11, game.getScore());
     }
 }
