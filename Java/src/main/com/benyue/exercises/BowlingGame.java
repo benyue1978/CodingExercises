@@ -28,7 +28,7 @@ public class BowlingGame {
             nextNextRollDouble = 1;
         } else if (frame.equals("x")){
             frameScore = nextRollDouble * 10;
-            nextRollDouble = 2;
+            nextRollDouble = 1 + nextNextRollDouble;
             nextNextRollDouble = 2;
         } else {
             frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + nextNextRollDouble * Integer.parseInt(frame.substring(1, 2));
