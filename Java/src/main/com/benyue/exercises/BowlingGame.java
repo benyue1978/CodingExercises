@@ -37,8 +37,7 @@ public class BowlingGame {
             }
         }
 
-        frameScore = getFrameScore(firstRoll, secondRoll);
-        frameScore += thirdRoll;
+        frameScore = nextRollDouble * firstRoll + nextNextRollDouble * secondRoll + thirdRoll;
 
         if (frame.equals("x")) {
             nextRollDouble = 1 + nextNextRollDouble;
@@ -50,11 +49,8 @@ public class BowlingGame {
             nextRollDouble = 1;
             nextNextRollDouble = 1;
         }
-        return frameScore;
-    }
 
-    private int getFrameScore(int firstRoll, int secondRoll) {
-        return nextRollDouble * firstRoll + nextNextRollDouble * secondRoll;
+        return frameScore;
     }
 
     private int stringToScore(String roll) {
