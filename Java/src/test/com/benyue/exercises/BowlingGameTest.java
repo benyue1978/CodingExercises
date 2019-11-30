@@ -100,4 +100,10 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame("1- 1- 1- 1- 1- 1- 1- 1- 1- xx2");
         assertEquals(31, game.getScore());
     }
+
+    @Test
+    public void allStrikeTest() {
+        BowlingGame game = new BowlingGame("x x x x x x x x x xxx");
+        assertEquals(300, game.getScore());
+    }
 }
