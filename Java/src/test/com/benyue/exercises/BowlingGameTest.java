@@ -58,4 +58,10 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame("x 12 1- 1- 1- 1- 1- 1- 1- 1-");
         assertEquals(24, game.getScore());
     }
+
+    @Test
+    public void strikeSpareTest() {
+        BowlingGame game = new BowlingGame("x 1/ 1- 1- 1- 1- 1- 1- 1- 1-");
+        assertEquals(39, game.getScore());
+    }
 }
