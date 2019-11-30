@@ -18,18 +18,16 @@ public class BowlingGame {
     }
 
     private int parseFrame(String frame) {
-        if (frame.startsWith("-")) {
-            if (frame.endsWith("-")) {
-                return 0;
-            } else {
-                return Integer.parseInt(frame.substring(1, 2));
-            }
-        } else {
-            if (frame.endsWith("-")) {
-                return Integer.parseInt(frame.substring(0, 1));
-            } else
-                return Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
+        if (frame.equals("--")) {
+            return 0;
         }
+        if (frame.startsWith("-")) {
+            return Integer.parseInt(frame.substring(1, 2));
+        }
+        if (frame.endsWith("-")) {
+            return Integer.parseInt(frame.substring(0, 1));
+        }
+        return Integer.parseInt(frame.substring(0, 1)) + Integer.parseInt(frame.substring(1, 2));
     }
 
     public int getScore() {
