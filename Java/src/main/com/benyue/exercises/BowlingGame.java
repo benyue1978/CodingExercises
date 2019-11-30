@@ -9,6 +9,7 @@ public class BowlingGame {
     private int nextNextRollDouble = 1;
 
     public BowlingGame(String s) {
+        s = s.replace("-", "0");
         String regex = "(\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+) (\\S+)";
         Pattern pattern = Pattern.compile(regex);
         Matcher m = pattern.matcher(s);
@@ -21,19 +22,7 @@ public class BowlingGame {
 
     private int parseFrame(String frame) {
         int frameScore;
-        if (frame.equals("--")) {
-            frameScore = 0;
-            nextRollDouble = 1;
-            nextNextRollDouble = 1;
-        } else if (frame.startsWith("-")) {
-            frameScore = Integer.parseInt(frame.substring(1, 2));
-            nextRollDouble = 1;
-            nextNextRollDouble = 1;
-        } else if (frame.endsWith("-")) {
-            frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1));
-            nextRollDouble = 1;
-            nextNextRollDouble = 1;
-        } else if (frame.endsWith("/")) {
+        if (frame.endsWith("/")) {
             frameScore = nextRollDouble * Integer.parseInt(frame.substring(0, 1)) + nextNextRollDouble * (10 - Integer.parseInt(frame.substring(0, 1)));
             nextRollDouble = 2;
             nextNextRollDouble = 1;
