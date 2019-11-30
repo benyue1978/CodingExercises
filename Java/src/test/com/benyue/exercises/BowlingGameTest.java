@@ -40,4 +40,10 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame("1/ 12 1- 1- 1- 1- 1- 1- 1- 1-");
         assertEquals(22, game.getScore());
     }
+
+    @Test
+    public void spareSpareTest() {
+        BowlingGame game = new BowlingGame("1/ 1/ 1- 1- 1- 1- 1- 1- 1- 1-");
+        assertEquals(30, game.getScore());
+    }
 }
