@@ -1,6 +1,8 @@
 package com.benyue.exercises;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -35,5 +37,16 @@ public class StringCalculatorTest {
     @Test
     public void setDelimiters() {
         assertEquals(3, sc.Add("//;\n1;2"));
+    }
+
+    @Rule
+    public ExpectedException exceptionNegative = ExpectedException.none();
+
+    @Test
+    public void noNegative() {
+        exceptionNegative.expect(IllegalArgumentException.class);
+        exceptionNegative.expectMessage("negatives not allowed: -1,-2");
+
+        sc.Add("-1,2,-2");
     }
 }
