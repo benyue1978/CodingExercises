@@ -1,34 +1,33 @@
 package com.benyue.exercises;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StringCalculator {
+
+    public static final String DELIMITER_PREFIX = "//";
+
     public int Add(String numbers) {
         int result = 0;
 
         if (numbers.isEmpty())
             return 0;
 
-        String delimiters = "[,\n]";
+        String delimiters = getDelimiters(numbers);
 
-        if (numbers.startsWith("//")) {
-            delimiters = numbers.substring(2, 3);
-            numbers = numbers.substring(4);
-        }
+        int[] numberList = getNumbers(numbers, delimiters);
 
-        String[] numberList = numbers.split(delimiters);
         ArrayList<String> negatives = new ArrayList<>();
 
-        for (String number : numberList) {
-            int n = Integer.parseInt(number);
-            if (n < 0) {
-                negatives.add(number);
+        for (int number : numberList) {
+            if (number < 0) {
+                negatives.add(Integer.toString(number));
             }
 
-            if (n > 1000) {
+            if (number > 1000) {
                 continue;
             }
-            result += n;
+            result += number;
         }
 
         if (negatives.size() > 0) {
@@ -36,5 +35,19 @@ public class StringCalculator {
         }
 
         return result;
+    }
+
+    private int[] getNumbers(String numbers, String delimiters) {
+        if (numbers.startsWith(DELIMITER_PREFIX)) {
+            numbers = numbers.substring(4);
+        }
+        return Arrays.stream(numbers.split(delimiters)).mapToInt(Integer::parseInt).toArray();
+    }
+
+    private String getDelimiters(String numbers) {
+        if (numbers.startsWith(DELIMITER_PREFIX)) {
+            return numbers.substring(2, 3);
+        }
+        return "[,\n]";
     }
 }
