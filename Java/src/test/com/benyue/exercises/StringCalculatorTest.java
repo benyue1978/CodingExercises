@@ -49,4 +49,9 @@ public class StringCalculatorTest {
 
         sc.Add("-1,2,-2");
     }
+
+    @Test
+    public void ignore1K() {
+        assertEquals(2, sc.Add("2,1001"));
+    }
 }

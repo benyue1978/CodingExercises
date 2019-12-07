@@ -24,6 +24,10 @@ public class StringCalculator {
             if (n < 0) {
                 negatives.add(number);
             }
+
+            if (n > 1000) {
+                continue;
+            }
             result += n;
         }
 
