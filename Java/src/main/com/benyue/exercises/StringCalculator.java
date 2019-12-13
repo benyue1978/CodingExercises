@@ -22,11 +22,15 @@ public class StringCalculator {
     }
 
     private int[] getNumbers(String numbers, String delimiters) {
-        String trimmedNumbers = numbers.startsWith(DELIMITER_PREFIX) ? numbers.substring(4) : numbers;
+        String trimmedNumbers = isWithDelimiter(numbers) ? numbers.substring(4) : numbers;
         return Arrays.stream(trimmedNumbers.split(delimiters)).mapToInt(Integer::parseInt).toArray();
     }
 
     private String getDelimiters(String numbers) {
-        return numbers.startsWith(DELIMITER_PREFIX) ? numbers.substring(2, 3) : "[,\n]";
+        return isWithDelimiter(numbers) ? numbers.substring(2, 3) : "[,\n]";
+    }
+
+    private boolean isWithDelimiter(String numbers) {
+        return numbers.startsWith(DELIMITER_PREFIX);
     }
 }
