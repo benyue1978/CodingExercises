@@ -12,13 +12,17 @@ public class StringCalculator {
 
         int[] numberList = getNumbers(numbers, getDelimiters(numbers));
 
+        negativeCheck(numberList);
+
+        return Arrays.stream(numberList).filter(n -> n < 1000).sum();
+    }
+
+    private void negativeCheck(int[] numberList) {
         String[] negatives = Arrays.stream(numberList).filter(n -> n < 0).mapToObj(String::valueOf).toArray(String[]::new);
 
         if (negatives.length > 0) {
             throw new IllegalArgumentException("negatives not allowed: " + String.join(",", negatives));
         }
-
-        return Arrays.stream(numberList).filter(n -> n < 1000).sum();
     }
 
     private int[] getNumbers(String numbers, String delimiters) {
