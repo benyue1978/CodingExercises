@@ -19,7 +19,7 @@ public class FooBarQixTest {
 
     @Test
     public void Three() {
-        assertEquals("Foo", fooBarQix.compute(3));
+        assertEquals("FooFoo", fooBarQix.compute(3));
     }
 
     @Test
@@ -30,5 +30,20 @@ public class FooBarQixTest {
     @Test
     public void Fifteen() {
         assertEquals("FooBar", fooBarQix.compute(15));
+    }
+
+    @Test
+    public void Seven() {
+        assertEquals("Qix", fooBarQix.compute(7));
+    }
+
+    @Test
+    public void ThirtyFive() {
+        assertEquals("BarQixFoo", fooBarQix.compute(35));
+    }
+
+    @Test
+    public void OneHundredFive() {
+        assertEquals("FooBarQix", fooBarQix.compute(105));
     }
 }
