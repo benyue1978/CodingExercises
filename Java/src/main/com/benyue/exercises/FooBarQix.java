@@ -22,15 +22,7 @@ public class FooBarQix {
         }
 
         String s = Integer.toString(n);
-        if (s.contains("3")) {
-            result += FOO;
-        }
-        if (s.contains("5")) {
-            result += BAR;
-        }
-        if (s.contains("7")) {
-            result += QIX;
-        }
+        result += s.replaceAll("[0124689]", "").replaceAll("3", FOO).replaceAll("5", BAR).replaceAll("7", QIX);
 
         if (result.isEmpty()) {
             result = s;

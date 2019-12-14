@@ -46,4 +46,9 @@ public class FooBarQixTest {
     public void OneHundredFive() {
         assertEquals("FooBarQixBar", fooBarQix.compute(105));
     }
+
+    @Test
+    public void ThirtyThree() {
+        assertEquals("FooFooFoo", fooBarQix.compute(33));
+    }
 }
