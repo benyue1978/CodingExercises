@@ -28,6 +28,9 @@ public class FooBarQix {
         if (s.contains("5")) {
             result += BAR;
         }
+        if (s.contains("7")) {
+            result += QIX;
+        }
 
         if (result.isEmpty()) {
             result = s;

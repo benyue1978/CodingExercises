@@ -34,7 +34,7 @@ public class FooBarQixTest {
 
     @Test
     public void Seven() {
-        assertEquals("Qix", fooBarQix.compute(7));
+        assertEquals("QixQix", fooBarQix.compute(7));
     }
 
     @Test
