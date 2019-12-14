@@ -2,12 +2,19 @@ package com.benyue.exercises;
 
 public class FooBarQix {
     public String compute(int n) {
+        String result = "";
+
         if (n % 3 == 0) {
-            return "Foo";
+            result += "Foo";
         }
+
         if (n % 5 == 0) {
-            return "Bar";
+            result += "Bar";
         }
-        return Integer.toString(n);
+
+        if (result.isEmpty()) {
+            result = Integer.toString(n);
+        }
+        return result;
     }
 }
