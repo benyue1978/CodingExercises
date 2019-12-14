@@ -16,4 +16,9 @@ public class FooBarQixTest {
     public void Two() {
         assertEquals("2", fooBarQix.compute(2));
     }
+
+    @Test
+    public void Three() {
+        assertEquals("Foo", fooBarQix.compute(3));
+    }
 }
