@@ -24,12 +24,12 @@ public class FooBarQixTest {
 
     @Test
     public void Five() {
-        assertEquals("Bar", fooBarQix.compute(5));
+        assertEquals("BarBar", fooBarQix.compute(5));
     }
 
     @Test
     public void Fifteen() {
-        assertEquals("FooBar", fooBarQix.compute(15));
+        assertEquals("FooBarBar", fooBarQix.compute(15));
     }
 
     @Test
@@ -39,11 +39,11 @@ public class FooBarQixTest {
 
     @Test
     public void ThirtyFive() {
-        assertEquals("BarQixFoo", fooBarQix.compute(35));
+        assertEquals("BarQixFooBar", fooBarQix.compute(35));
     }
 
     @Test
     public void OneHundredFive() {
-        assertEquals("FooBarQix", fooBarQix.compute(105));
+        assertEquals("FooBarQixBar", fooBarQix.compute(105));
     }
 }

@@ -25,6 +25,9 @@ public class FooBarQix {
         if (s.contains("3")) {
             result += FOO;
         }
+        if (s.contains("5")) {
+            result += BAR;
+        }
 
         if (result.isEmpty()) {
             result = s;
