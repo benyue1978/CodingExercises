@@ -44,7 +44,7 @@ public class FooBarQixTest {
 
     @Test
     public void OneHundredFive() {
-        assertEquals("FooBarQixBar", fooBarQix.compute(105));
+        assertEquals("FooBarQix*Bar", fooBarQix.compute(105));
     }
 
     @Test
@@ -53,7 +53,12 @@ public class FooBarQixTest {
     }
 
     @Test
-    public void ZeroReplace() {
+    public void ZeroReplace101() {
         assertEquals("1*1", fooBarQix.compute(101));
+    }
+
+    @Test
+    public void ZeroReplace303() {
+        assertEquals("FooFoo*Foo", fooBarQix.compute(303));
     }
 }

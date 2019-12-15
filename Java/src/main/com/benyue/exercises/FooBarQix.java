@@ -22,11 +22,11 @@ public class FooBarQix {
         }
 
         String s = Integer.toString(n);
-        result += s.replaceAll("[0124689]", "").replaceAll("3", FOO).replaceAll("5", BAR).replaceAll("7", QIX);
+        result += s.replaceAll("[124689]", "").replaceAll("3", FOO).replaceAll("5", BAR).replaceAll("7", QIX);
 
-        if (result.isEmpty()) {
-            result = s.replaceAll("0", "*");
+        if (n % 3 != 0 && n % 5 != 0 && n % 7 != 0) {
+            result = s;
         }
-        return result;
+        return result.replaceAll("0", "*");
     }
 }
