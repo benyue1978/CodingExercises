@@ -25,7 +25,7 @@ public class FooBarQix {
         result += s.replaceAll("[0124689]", "").replaceAll("3", FOO).replaceAll("5", BAR).replaceAll("7", QIX);
 
         if (result.isEmpty()) {
-            result = s;
+            result = s.replaceAll("0", "*");
         }
         return result;
     }
