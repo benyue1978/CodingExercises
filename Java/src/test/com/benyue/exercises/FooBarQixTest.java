@@ -61,4 +61,9 @@ public class FooBarQixTest {
     public void ZeroReplace303() {
         assertEquals("FooFoo*Foo", fooBarQix.compute(303));
     }
+
+    @Test
+    public void TwentyThree() {
+        assertEquals("BarFoo", fooBarQix.compute(53));
+    }
 }
