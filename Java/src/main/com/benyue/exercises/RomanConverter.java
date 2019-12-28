@@ -1,5 +1,7 @@
 package com.benyue.exercises;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class RomanConverter {
@@ -16,19 +18,15 @@ public class RomanConverter {
     }
 
     public String toRoman(int i) {
-        if (numberNumeralMap.get(i) != null) {
-            return numberNumeralMap.get(i);
-        }
-
         StringBuilder roman = new StringBuilder();
-
-        while (i >= 5) {
-            roman.append(numberNumeralMap.get(5));
-            i -= 5;
-        }
-        while (i >= 1) {
-            roman.append(numberNumeralMap.get(1));
-            i -= 1;
+        ArrayList<Integer> keys = new ArrayList<>(numberNumeralMap.keySet());
+        Collections.sort(keys);
+        Collections.reverse(keys);
+        for (int number : keys) {
+            while (i >= number) {
+                roman.append(numberNumeralMap.get(number));
+                i -= number;
+            }
         }
         return roman.toString();
     }

@@ -58,4 +58,10 @@ public class RomanConverterTest {
         RomanConverter converter = new RomanConverter();
         assertEquals("VI", converter.toRoman(6));
     }
+
+    @Test
+    public void Test16() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("XVII", converter.toRoman(17));
+    }
 }
