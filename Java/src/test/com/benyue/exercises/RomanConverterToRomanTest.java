@@ -4,113 +4,112 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class RomanConverterTest {
+public class RomanConverterToRomanTest {
     @Test
     public void Test1() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("I", converter.toRoman(1));
+        assertEquals("I", converter.numberToRoman(1));
     }
 
     @Test
     public void Test5() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("V", converter.toRoman(5));
+        assertEquals("V", converter.numberToRoman(5));
     }
 
     @Test
     public void Test10() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("X", converter.toRoman(10));
+        assertEquals("X", converter.numberToRoman(10));
     }
 
     @Test
     public void Test50() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("L", converter.toRoman(50));
+        assertEquals("L", converter.numberToRoman(50));
     }
 
     @Test
     public void Test100() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("C", converter.toRoman(100));
+        assertEquals("C", converter.numberToRoman(100));
     }
 
     @Test
     public void Test500() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("D", converter.toRoman(500));
+        assertEquals("D", converter.numberToRoman(500));
     }
 
     @Test
     public void Test1000() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("M", converter.toRoman(1000));
+        assertEquals("M", converter.numberToRoman(1000));
     }
 
     @Test
     public void Test2() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("II", converter.toRoman(2));
+        assertEquals("II", converter.numberToRoman(2));
     }
 
     @Test
     public void Test6() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("VI", converter.toRoman(6));
+        assertEquals("VI", converter.numberToRoman(6));
     }
 
     @Test
     public void Test16() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("XVII", converter.toRoman(17));
+        assertEquals("XVII", converter.numberToRoman(17));
     }
 
     @Test
     public void Test4() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("IV", converter.toRoman(4));
+        assertEquals("IV", converter.numberToRoman(4));
     }
 
     @Test
     public void Test9() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("IX", converter.toRoman(9));
+        assertEquals("IX", converter.numberToRoman(9));
     }
 
     @Test
     public void Test40() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("XL", converter.toRoman(40));
+        assertEquals("XL", converter.numberToRoman(40));
     }
 
     @Test
     public void Test49() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("XLIX", converter.toRoman(49));
+        assertEquals("XLIX", converter.numberToRoman(49));
     }
 
     @Test
     public void Test90() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("XC", converter.toRoman(90));
+        assertEquals("XC", converter.numberToRoman(90));
     }
 
     @Test
     public void Test400() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("CD", converter.toRoman(400));
+        assertEquals("CD", converter.numberToRoman(400));
     }
 
     @Test
     public void Test900() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("CM", converter.toRoman(900));
+        assertEquals("CM", converter.numberToRoman(900));
     }
 
     @Test
     public void Test3999() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("MMMCMXCIX", converter.toRoman(3999));
+        assertEquals("MMMCMXCIX", converter.numberToRoman(3999));
     }
-
 }

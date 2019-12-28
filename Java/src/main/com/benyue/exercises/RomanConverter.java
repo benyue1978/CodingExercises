@@ -23,7 +23,7 @@ public class RomanConverter {
         numberNumeralMap.put(900, "CM");
     }
 
-    public String toRoman(int i) {
+    public String numberToRoman(int i) {
         StringBuilder roman = new StringBuilder();
         ArrayList<Integer> keys = new ArrayList<>(numberNumeralMap.keySet());
         Collections.sort(keys);
