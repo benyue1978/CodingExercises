@@ -52,4 +52,10 @@ public class RomanConverterTest {
         RomanConverter converter = new RomanConverter();
         assertEquals("II", converter.toRoman(2));
     }
+
+    @Test
+    public void Test6() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("VI", converter.toRoman(6));
+    }
 }

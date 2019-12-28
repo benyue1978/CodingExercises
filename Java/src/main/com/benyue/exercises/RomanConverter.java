@@ -21,7 +21,12 @@ public class RomanConverter {
         }
 
         StringBuilder roman = new StringBuilder();
-        while (i > 0) {
+
+        while (i >= 5) {
+            roman.append(numberNumeralMap.get(5));
+            i -= 5;
+        }
+        while (i >= 1) {
             roman.append(numberNumeralMap.get(1));
             i -= 1;
         }
