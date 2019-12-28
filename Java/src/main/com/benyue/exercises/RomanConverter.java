@@ -7,7 +7,6 @@ public class RomanConverter {
 
     public RomanConverter() {
         numberNumeralMap.put(1, "I");
-        numberNumeralMap.put(2, "II");
         numberNumeralMap.put(5, "V");
         numberNumeralMap.put(10, "X");
         numberNumeralMap.put(50, "L");
@@ -17,6 +16,15 @@ public class RomanConverter {
     }
 
     public String toRoman(int i) {
-        return numberNumeralMap.get(i);
+        if (numberNumeralMap.get(i) != null) {
+            return numberNumeralMap.get(i);
+        }
+
+        StringBuilder roman = new StringBuilder();
+        while (i > 0) {
+            roman.append(numberNumeralMap.get(1));
+            i -= 1;
+        }
+        return roman.toString();
     }
 }

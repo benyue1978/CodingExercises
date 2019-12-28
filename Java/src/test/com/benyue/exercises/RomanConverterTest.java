@@ -18,12 +18,6 @@ public class RomanConverterTest {
     }
 
     @Test
-    public void Test2() {
-        RomanConverter converter = new RomanConverter();
-        assertEquals("II", converter.toRoman(2));
-    }
-
-    @Test
     public void Test10() {
         RomanConverter converter = new RomanConverter();
         assertEquals("X", converter.toRoman(10));
@@ -51,5 +45,11 @@ public class RomanConverterTest {
     public void Test1000() {
         RomanConverter converter = new RomanConverter();
         assertEquals("M", converter.toRoman(1000));
+    }
+
+    @Test
+    public void Test2() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("II", converter.toRoman(2));
     }
 }
