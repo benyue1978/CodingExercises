@@ -22,4 +22,34 @@ public class RomanConverterTest {
         RomanConverter converter = new RomanConverter();
         assertEquals("II", converter.toRoman(2));
     }
+
+    @Test
+    public void Test10() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("X", converter.toRoman(10));
+    }
+
+    @Test
+    public void Test50() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("L", converter.toRoman(50));
+    }
+
+    @Test
+    public void Test100() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("C", converter.toRoman(100));
+    }
+
+    @Test
+    public void Test500() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("D", converter.toRoman(500));
+    }
+
+    @Test
+    public void Test1000() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("M", converter.toRoman(1000));
+    }
 }
