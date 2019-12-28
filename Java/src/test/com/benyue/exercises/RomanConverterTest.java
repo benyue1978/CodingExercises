@@ -70,4 +70,30 @@ public class RomanConverterTest {
         RomanConverter converter = new RomanConverter();
         assertEquals("IV", converter.toRoman(4));
     }
+
+    @Test
+    public void Test9() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("IX", converter.toRoman(9));
+    }
+
+    @Test
+    public void Test40() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("XL", converter.toRoman(40));
+    }
+
+    @Test
+    public void Test49() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("XLIX", converter.toRoman(49));
+    }
+
+    @Test
+    public void Test90() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("XC", converter.toRoman(90));
+    }
+
+
 }

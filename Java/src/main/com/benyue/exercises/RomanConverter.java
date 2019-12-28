@@ -16,6 +16,9 @@ public class RomanConverter {
         numberNumeralMap.put(500, "D");
         numberNumeralMap.put(1000, "M");
         numberNumeralMap.put(4, "IV");
+        numberNumeralMap.put(9, "IX");
+        numberNumeralMap.put(40, "XL");
+        numberNumeralMap.put(90, "XC");
     }
 
     public String toRoman(int i) {
