@@ -95,5 +95,16 @@ public class RomanConverterTest {
         assertEquals("XC", converter.toRoman(90));
     }
 
+    @Test
+    public void Test400() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("CD", converter.toRoman(400));
+    }
+
+    @Test
+    public void Test900() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("CM", converter.toRoman(900));
+    }
 
 }
