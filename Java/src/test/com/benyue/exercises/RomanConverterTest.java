@@ -107,4 +107,10 @@ public class RomanConverterTest {
         assertEquals("CM", converter.toRoman(900));
     }
 
+    @Test
+    public void Test3999() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("MMMCMXCIX", converter.toRoman(3999));
+    }
+
 }
