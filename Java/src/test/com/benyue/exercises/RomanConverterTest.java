@@ -64,4 +64,10 @@ public class RomanConverterTest {
         RomanConverter converter = new RomanConverter();
         assertEquals("XVII", converter.toRoman(17));
     }
+
+    @Test
+    public void Test4() {
+        RomanConverter converter = new RomanConverter();
+        assertEquals("IV", converter.toRoman(4));
+    }
 }
