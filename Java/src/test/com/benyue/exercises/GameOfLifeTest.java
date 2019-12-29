@@ -56,4 +56,21 @@ public class GameOfLifeTest {
                 "..";
         testNG(grid, gridNG);
     }
+
+    @Test
+    public void life4x4grid() {
+        String grid = "Generation 1:\n" +
+                "4 4\n" +
+                "....\n" +
+                ".**.\n" +
+                ".**.\n" +
+                "....";
+        String gridNG = "Generation 2:\n" +
+                "4 4\n" +
+                "....\n" +
+                ".**.\n" +
+                ".**.\n" +
+                "....";
+        testNG(grid, gridNG);
+    }
 }
