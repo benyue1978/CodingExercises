@@ -10,13 +10,38 @@ public class GameOfLifeTest {
         String grid = "Generation 1:\n" +
                 "1 1\n" +
                 ".";
-
         String gridNG = "Generation 2:\n" +
                 "1 1\n" +
                 ".";
         GameOfLife gol = new GameOfLife(grid);
 
         assertEquals(gridNG, gol.getNG());
-
     }
+
+    @Test
+    public void life1x1Grid() {
+        String grid = "Generation 1:\n" +
+                "1 1\n" +
+                "*";
+        String gridNG = "Generation 2:\n" +
+                "1 1\n" +
+                ".";
+        GameOfLife gol = new GameOfLife(grid);
+
+        assertEquals(gridNG, gol.getNG());
+    }
+
+    @Test
+    public void blank2x1Grid() {
+        String grid = "Generation 1:\n" +
+                "2 1\n" +
+                "..";
+        String gridNG = "Generation 2:\n" +
+                "2 1\n" +
+                "..";
+        GameOfLife gol = new GameOfLife(grid);
+
+        assertEquals(gridNG, gol.getNG());
+    }
+
 }
