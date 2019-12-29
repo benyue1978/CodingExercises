@@ -44,4 +44,18 @@ public class GameOfLifeTest {
         assertEquals(gridNG, gol.getNG());
     }
 
+    @Test
+    public void dead2x2Grid() {
+        String grid = "Generation 1:\n" +
+                "2 2\n" +
+                "..\n" +
+                ".*";
+        String gridNG = "Generation 2:\n" +
+                "2 2\n" +
+                "..\n" +
+                "..";
+        GameOfLife gol = new GameOfLife(grid);
+
+        assertEquals(gridNG, gol.getNG());
+    }
 }

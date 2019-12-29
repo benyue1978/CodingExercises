@@ -10,7 +10,9 @@ public class GameOfLife {
     public String getNG() {
         String[] lines = currentGrid.split("\n");
         lines[0] = "Generation 2:";
-        lines[2] = lines[2].replaceAll("\\*", ".");
+        for (int i = 2; i < lines.length; i++) {
+            lines[i] = lines[i].replaceAll("\\*", ".");
+        }
         return String.join("\n", lines);
     }
 }
