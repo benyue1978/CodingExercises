@@ -1,6 +1,5 @@
 package com.benyue.exercises;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -76,7 +75,6 @@ public class GameOfLifeTest {
     }
 
     @Test
-    @Ignore
     public void life4x1grid() {
         String grid = "Generation 1:\n" +
                 "4 1\n" +
