@@ -13,7 +13,7 @@ public class GameOfLifeGrid {
     }
 
     public String[] getLines() {
-        return lines;
+        return lines.clone();
     }
 
     public int getWidth() {

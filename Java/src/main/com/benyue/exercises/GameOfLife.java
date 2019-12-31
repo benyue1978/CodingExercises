@@ -9,7 +9,7 @@ public class GameOfLife {
 
     private boolean isSurvived(int i, int j) {
         int neighbourCount = currentGrid.getNeighbourCount(i, j);
-        return currentGrid.isLife(i, j) && (neighbourCount == 2 || neighbourCount == 3);
+        return currentGrid.isLife(i, j) && neighbourCount == 2 || neighbourCount == 3;
     }
 
     public String getNG() {

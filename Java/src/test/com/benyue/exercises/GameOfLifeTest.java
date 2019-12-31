@@ -84,4 +84,34 @@ public class GameOfLifeTest {
                 ".**.";
         testNG(grid, gridNG);
     }
+
+    @Test
+    public void newLife3x3grid() {
+        String grid = "Generation 1:\n" +
+                "3 3\n" +
+                "...\n" +
+                "***\n" +
+                "...";
+        String gridNG = "Generation 2:\n" +
+                "3 3\n" +
+                ".*.\n" +
+                ".*.\n" +
+                ".*.";
+        testNG(grid, gridNG);
+    }
+
+    @Test
+    public void dieCrowd3x3grid() {
+        String grid = "Generation 1:\n" +
+                "3 3\n" +
+                "***\n" +
+                "***\n" +
+                "***";
+        String gridNG = "Generation 2:\n" +
+                "3 3\n" +
+                "*.*\n" +
+                "...\n" +
+                "*.*";
+        testNG(grid, gridNG);
+    }
 }
