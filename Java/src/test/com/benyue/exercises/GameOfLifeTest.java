@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class GameOfLifeTest {
     private void testNG(String grid, String gridNG) {
         GameOfLife gol = new GameOfLife(grid);
-        assertEquals(gridNG, gol.getNG());
+        assertEquals(gridNG, gol.getNGGrid().toString());
     }
 
     @Test
