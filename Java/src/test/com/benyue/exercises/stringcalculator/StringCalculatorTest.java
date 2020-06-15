@@ -1,5 +1,6 @@
-package com.benyue.exercises;
+package com.benyue.exercises.stringcalculator;
 
+import com.benyue.exercises.stringcalculator.StringCalculator;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
